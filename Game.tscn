@@ -1,0 +1,120 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scene/Main.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Camera.gd" type="Script" id=2]
+[ext_resource path="res://Camer_Zoom.gd" type="Script" id=3]
+[ext_resource path="res://practice.tres" type="TileSet" id=4]
+[ext_resource path="res://HUD/upperpanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/bunker_off.png" type="Texture" id=6]
+[ext_resource path="res://assets/bunker_on.png" type="Texture" id=7]
+[ext_resource path="res://HUD/sidepanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/buttons/cancel.png" type="Texture" id=9]
+[ext_resource path="res://scene/Cells/HealthyCell.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scene/Cells/InfectedCell.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scene/Status.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 current_color : hint_color;
+
+void fragment(){
+	
+	vec4 final_color = mix(texture(TEXTURE, UV), current_color, texture(TEXTURE, UV).a);
+	COLOR = final_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/current_color = null
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+Level_Count = 2
+
+[node name="Camera" type="KinematicBody2D" parent="."]
+position = Vector2( 557.208, 213.384 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+position = Vector2( 221.392, 319.316 )
+current = true
+zoom = Vector2( 2, 2 )
+script = ExtResource( 3 )
+zoomMax = 2.7
+
+[node name="TileMap" type="TileMap" parent="Camera/Camera2D"]
+visible = false
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( -524303, 3, 0, -589810, 3, 0, 589809, 3, 0, 524302, 3, 0 )
+
+[node name="UPPERPANEl" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+
+[node name="drawrect" type="ColorRect" parent="UPPERPANEl"]
+modulate = Color( 0.615686, 0, 0, 1 )
+
+[node name="nav" type="Navigation2D" parent="."]
+editor/display_folded = true
+
+[node name="WallTimer" type="Timer" parent="nav"]
+autostart = true
+
+[node name="Bunker" type="TextureButton" parent="."]
+margin_left = 565.713
+margin_top = -300.174
+margin_right = 647.713
+margin_bottom = -223.174
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="MenuPress" parent="Bunker" instance=ExtResource( 8 )]
+
+[node name="PlayerStart" type="Position2D" parent="Bunker"]
+position = Vector2( 7.71922, 38.8889 )
+
+[node name="Cancel" type="Button" parent="Bunker"]
+visible = false
+margin_left = 9.0
+margin_top = -64.9266
+margin_right = 71.0
+margin_bottom = -8.92664
+icon = ExtResource( 9 )
+flat = true
+
+[node name="HealthyCell" parent="." instance=ExtResource( 10 )]
+position = Vector2( 950.952, -28.5864 )
+
+[node name="InfectedCell" parent="." groups=[
+"infectedcells",
+] instance=ExtResource( 11 )]
+position = Vector2( -153.209, 92.8785 )
+
+[node name="SpawnGoal" type="Position2D" parent="."]
+
+[node name="Status" parent="." instance=ExtResource( 12 )]
+
+[node name="BuildMode" type="Node2D" parent="."]
+
+[node name="TemporarySprite" type="Sprite" parent="BuildMode"]
+material = SubResource( 2 )
+position = Vector2( -0.225609, -0.190346 )
+z_index = 1
+z_as_relative = false
+
+[node name="PolyRange" type="Polygon2D" parent="BuildMode"]
+position = Vector2( -0.0423889, -0.295593 )
+scale = Vector2( 1.14286, 1.13699 )
+color = Color( 0.188235, 1, 0.352941, 0.376471 )
+
+[node name="WBCTower" type="YSort" parent="."]
+[connection signal="draw" from="Camera" to="Camera" method="_on_Camera_draw"]
+[connection signal="enable_tracking" from="UPPERPANEl" to="Camera" method="_on_UPPERPANEl_enable_tracking"]
+[connection signal="timeout" from="nav/WallTimer" to="." method="_on_WallTimer_timeout"]
+[connection signal="button_down" from="Bunker" to="." method="_on_Bunker_pressed"]
+[connection signal="pressed" from="Bunker" to="." method="_on_Bunker_pressed"]
+[connection signal="button_down" from="Bunker/Cancel" to="." method="_on_Cancel_button_down"]
+[connection signal="draw" from="BuildMode/TemporarySprite" to="." method="_draw"]

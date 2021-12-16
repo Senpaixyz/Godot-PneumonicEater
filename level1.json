@@ -1,0 +1,44 @@
+{
+  "player_position":[{"start":"PlayerStart","goal": "SpawnGoal"}],
+  "wbc":[{"Neutrophils":5,"Monocytes":5,"Basophils":8,"Eosinophils":12,"Lymphocytes":15}],
+  "waves": [
+    {
+      "id" : "1",
+      "intval" : 5.0,
+	  "damage" : { "Virus1":1, "Virus2":2, "Virus3":15, "Virus4":20,"Virus5":25 },
+      "enemies" : [
+        {"type": "Virus2", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus2", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus2", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+
+      ],
+      "count" : 0,
+      "state" : 0,
+	  "TotalCellHealth":200
+    },
+    {
+      "id" : "2",
+      "intval" : 10.0,
+	  "damage" : { "Virus1":15, "Virus2":20, "Virus3":35, "Virus4":40,"Virus5":25 },
+      "enemies" : [
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+        {"type": "Virus1", "intval": 2.0, "start": "EnemyStart","goal": "HealthyCell/EnemyGoal","goal2": "HealthyCell2/EnemyGoal"},
+      ],
+      "count" : 0,
+      "state" : 0
+    }
+  ]
+}
+

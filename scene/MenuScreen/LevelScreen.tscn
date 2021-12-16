@@ -1,0 +1,190 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scene/MenuScreen/LevelScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/lungs/bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/lungs/lvl1.png" type="Texture" id=3]
+[ext_resource path="res://assets/lungs/lvl2.png" type="Texture" id=4]
+[ext_resource path="res://assets/lungs/lvl3.png" type="Texture" id=5]
+[ext_resource path="res://assets/lungs/lvl4.png" type="Texture" id=6]
+[ext_resource path="res://assets/lungs/lvl5.png" type="Texture" id=7]
+[ext_resource path="res://assets/lungs/lvl6.png" type="Texture" id=8]
+[ext_resource path="res://assets/lungs/lvl7.png" type="Texture" id=9]
+[ext_resource path="res://font1/Android 101.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0.419608, 0.34902, 1 )
+font_data = ExtResource( 10 )
+
+[node name="Lungs" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 462.422, 231.211 )
+scale = Vector2( 0.765244, 0.651779 )
+texture = ExtResource( 2 )
+
+[node name="lvl1" type="Sprite" parent="."]
+position = Vector2( 464.501, 229.844 )
+scale = Vector2( 0.915007, 0.627958 )
+texture = ExtResource( 3 )
+
+[node name="lvl2" type="Sprite" parent="."]
+position = Vector2( 463.963, 246.036 )
+scale = Vector2( 0.814677, 0.733143 )
+texture = ExtResource( 4 )
+
+[node name="lvl3" type="Sprite" parent="."]
+position = Vector2( 461.714, 240.749 )
+scale = Vector2( 0.854787, 0.681576 )
+texture = ExtResource( 5 )
+
+[node name="lvl4" type="Sprite" parent="."]
+position = Vector2( 460.221, 237.784 )
+scale = Vector2( 0.833374, 0.754151 )
+texture = ExtResource( 6 )
+
+[node name="lvl5" type="Sprite" parent="."]
+position = Vector2( 458.499, 235.465 )
+scale = Vector2( 0.873145, 0.688527 )
+texture = ExtResource( 7 )
+
+[node name="lvl6" type="Sprite" parent="."]
+position = Vector2( 458.553, 249.257 )
+scale = Vector2( 0.773481, 0.592267 )
+texture = ExtResource( 8 )
+
+[node name="lvl7" type="Sprite" parent="."]
+position = Vector2( 482.11, 237.793 )
+scale = Vector2( 0.721352, 0.709023 )
+texture = ExtResource( 9 )
+
+[node name="Level1" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 81.0
+margin_top = 41.0
+margin_right = 129.0
+margin_bottom = -253.0
+expand = true
+stretch_mode = 4
+
+[node name="Level2" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -83.0
+margin_top = 95.0
+margin_right = 94.0
+margin_bottom = -167.0
+disabled = true
+expand = true
+stretch_mode = 4
+
+[node name="Level3" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -11.0
+margin_top = 232.0
+margin_right = 100.0
+margin_bottom = -76.0
+disabled = true
+expand = true
+stretch_mode = 4
+
+[node name="Level4" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 126.0
+margin_top = 78.0
+margin_right = 312.0
+margin_bottom = -200.0
+disabled = true
+expand = true
+stretch_mode = 4
+
+[node name="Level5" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 109.0
+margin_top = 222.0
+margin_right = 241.0
+margin_bottom = -46.0
+disabled = true
+expand = true
+stretch_mode = 4
+
+[node name="1" type="Label" parent="."]
+margin_left = 466.044
+margin_top = 49.5542
+margin_right = 574.044
+margin_bottom = 74.5542
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL 1"
+
+[node name="2" type="Label" parent="."]
+margin_left = 229.313
+margin_top = 151.651
+margin_right = 349.313
+margin_bottom = 176.651
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL 2"
+
+[node name="3" type="Label" parent="."]
+margin_left = 358.337
+margin_top = 269.456
+margin_right = 478.337
+margin_bottom = 294.456
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL 3"
+
+[node name="4" type="Label" parent="."]
+margin_left = 562.532
+margin_top = 150.53
+margin_right = 682.532
+margin_bottom = 175.53
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL 4"
+
+[node name="6" type="Label" parent="."]
+margin_left = 193.411
+margin_top = 342.383
+margin_right = 313.411
+margin_bottom = 367.383
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL 6"
+
+[node name="7" type="Label" parent="."]
+margin_left = 583.762
+margin_top = 369.732
+margin_right = 703.762
+margin_bottom = 394.732
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL 7"
+
+[node name="5" type="Label" parent="."]
+margin_left = 448.093
+margin_top = 315.456
+margin_right = 568.093
+margin_bottom = 340.456
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL 5"
+
+[node name="LabelTitle" type="Label" parent="."]
+margin_left = 22.9333
+margin_top = 43.2047
+margin_right = 388.933
+margin_bottom = 96.2047
+custom_fonts/font = SubResource( 1 )
+text = "YOU MUST PROTECT YOUR
+LUNGS, FROM ATTACK!"
+[connection signal="pressed" from="Level1" to="." method="_pressed" binds= [ "Level1", 1 ]]
+[connection signal="pressed" from="Level2" to="." method="_pressed" binds= [ "Level2", 2 ]]
+[connection signal="pressed" from="Level3" to="." method="_pressed" binds= [ "Level3", 3 ]]
+[connection signal="pressed" from="Level4" to="." method="_pressed" binds= [ "Level4", 4 ]]
+[connection signal="pressed" from="Level5" to="." method="_pressed" binds= [ "Level5", 5 ]]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/wbc/lymp/lymphocytes_front.png" type="Texture" id=2]
+
+[node name="Lymphocytes" instance=ExtResource( 1 )]
+self_tag = "Lymphocytes"
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )

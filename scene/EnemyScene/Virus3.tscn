@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scene/EnemyScene/EnemyBaseScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/EnemyScene/Virus3.gd" type="Script" id=2]
+[ext_resource path="res://assets/animatedvirus/virus3.tres" type="SpriteFrames" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.7384
+
+[node name="Virus3" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+DAMAGE = 5
+
+[node name="Sprite" parent="Detector" index="0"]
+position = Vector2( -7.22427, -38.53 )
+scale = Vector2( 7.54708, 8.52537 )
+frames = ExtResource( 3 )
+frame = 2
+
+[node name="Attack" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" index="0"]
+shape = SubResource( 1 )
+
+[node name="AttackInterval" type="Timer" parent="." index="5"]
+autostart = true
+[connection signal="body_entered" from="Attack" to="." method="_on_Attack_body_entered"]
+[connection signal="timeout" from="AttackInterval" to="." method="_on_AttackInterval_timeout"]

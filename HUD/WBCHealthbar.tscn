@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Healthbar.tscn" type="PackedScene" id=1]
+
+[node name="Healthbar" instance=ExtResource( 1 )]
+margin_right = -621.0
+rect_scale = Vector2( 2.73307, 1.9548 )
+
+[node name="HealthOver" parent="." index="0"]
+margin_right = 100.0
+margin_bottom = 10.0
+
+[node name="HealthBar" parent="." index="1"]
+margin_right = 100.0
+margin_bottom = 10.0
+max_value = 1200.0
+value = 1200.0

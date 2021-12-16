@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/WbcTower/BasedTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/BulletScene/Tank4.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/wbc/tower/eos_t4.png" type="Texture" id=3]
+
+[node name="Eosinophils" instance=ExtResource( 1 )]
+detect_radius = 400
+fire_rate = 0.9
+Bullet = ExtResource( 2 )
+Identity = "Tower4"
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.836397, -14.9382 )
+scale = Vector2( 0.0365668, 0.0383437 )
+texture = ExtResource( 3 )

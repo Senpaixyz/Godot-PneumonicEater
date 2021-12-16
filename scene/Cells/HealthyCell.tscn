@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/Cells/Cells.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/cells/healthy_animation.tres" type="SpriteFrames" id=2]
+
+[node name="HealthyCell" groups=[
+"healthycell",
+] instance=ExtResource( 1 )]
+Health_Tag = "HealthyCell"
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2( -0.748576, 2.41055 )
+scale = Vector2( 0.828292, 0.786074 )
+frames = ExtResource( 2 )
+animation = "healthy"
+frame = 7
+playing = true
+
+[node name="Healthbar" parent="." index="4"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -47.2276
+margin_top = -32.3406
+margin_right = -47.2276
+margin_bottom = -32.3406
+
+[node name="EnemyGoal" type="Position2D" parent="." index="5"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/Cells/Cells.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/cells/infected_animation.tres" type="SpriteFrames" id=2]
+
+[node name="InfectedCell" instance=ExtResource( 1 )]
+Health_Tag = "InfectedCell"
+
+[node name="Cells" parent="." index="0"]
+collision_layer = 9
+collision_mask = 9
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2( -0.206578, 1.10737 )
+scale = Vector2( 0.694244, 0.733526 )
+frames = ExtResource( 2 )
+animation = "infected"
+frame = 2
+playing = true
+
+[node name="PlayerGoal" type="Position2D" parent="." index="4"]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scripts/WhiteBloodCells.gd" type="Script" id=1]
+[ext_resource path="res://scene/BulletScene/EnemyBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/virus/virus5_left_01.png" type="Texture" id=3]
+[ext_resource path="res://assets/virus/virus5_left_02.png" type="Texture" id=4]
+[ext_resource path="res://assets/virus/virus5_left_03.png" type="Texture" id=5]
+[ext_resource path="res://assets/virus/virus5_right_01.png" type="Texture" id=6]
+[ext_resource path="res://assets/virus/virus5_right_02.png" type="Texture" id=7]
+[ext_resource path="res://assets/virus/virus5_right_03.png" type="Texture" id=8]
+[ext_resource path="res://assets/virus/virus5_top_01.png" type="Texture" id=9]
+[ext_resource path="res://assets/virus/virus5_top_02.png" type="Texture" id=10]
+[ext_resource path="res://assets/virus/virus5_top_03.png" type="Texture" id=11]
+[ext_resource path="res://assets/virus/virus5_down_01.png" type="Texture" id=12]
+[ext_resource path="res://assets/virus/virus5_down_02.png" type="Texture" id=13]
+[ext_resource path="res://assets/virus/virus5_down_03.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "top",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 2714.6
+
+[sub_resource type="CircleShape2D" id=3]
+
+[node name="EnemyBaseScene" type="KinematicBody2D" groups=[
+"infectedcell",
+]]
+collision_layer = 16
+script = ExtResource( 1 )
+detect_radius = 250
+fire_rate = 0.4
+Bullet = ExtResource( 2 )
+
+[node name="Detector" type="Area2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+priority = 1.0
+collision_layer = 9
+collision_mask = 9
+
+[node name="Sprite" type="AnimatedSprite" parent="Detector"]
+frames = SubResource( 1 )
+animation = "down"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource( 2 )
+
+[node name="CurrentShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="Range" type="Timer" parent="."]
+wait_time = 0.07
+autostart = true
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 3.57
+[connection signal="draw" from="." to="." method="_on_EnemyBaseScene_draw"]
+[connection signal="area_entered" from="Detector" to="." method="_on_Detector_area_entered"]
+[connection signal="area_exited" from="Detector" to="." method="_on_Detector_area_exited"]
+[connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]
+[connection signal="timeout" from="Range" to="." method="_on_Range_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

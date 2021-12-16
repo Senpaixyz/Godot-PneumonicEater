@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/wbc/mono/monocytes_front.png" type="Texture" id=2]
+
+[node name="Monocytes" index="0" instance=ExtResource( 1 )]
+self_tag = "Monocytes"
+fire_rate = 0.9
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="EnemyDetector" index="0"]
+position = Vector2( 10.8036, 0 )
+
+[node name="ShootTimer" parent="." index="4"]
+wait_time = 0.12

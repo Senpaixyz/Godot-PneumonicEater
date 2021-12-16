@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/WbcTower/BasedTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/BulletScene/Tank3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/wbc/tower/baso_t3.png" type="Texture" id=3]
+
+[node name="Basophils" index="0" instance=ExtResource( 1 )]
+detect_radius = 500
+fire_rate = 0.7
+Bullet = ExtResource( 2 )
+Identity = "Tower3"
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 2.04333, -18.5816 )
+scale = Vector2( 0.0392285, 0.0428728 )
+texture = ExtResource( 3 )

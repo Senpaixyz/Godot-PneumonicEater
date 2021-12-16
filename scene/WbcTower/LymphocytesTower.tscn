@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/WbcTower/BasedTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/BulletScene/Tank5.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/wbc/tower/lymp_t5.png" type="Texture" id=3]
+
+[node name="Lymphocytes" instance=ExtResource( 1 )]
+detect_radius = 600
+fire_rate = 0.9
+Bullet = ExtResource( 2 )
+Identity = "Tower5"
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( -0.0358663, -11.8244 )
+scale = Vector2( 0.0431887, 0.0428728 )
+texture = ExtResource( 3 )

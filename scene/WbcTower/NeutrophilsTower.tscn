@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/WbcTower/BasedTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/BulletScene/Tank1Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/wbc/tower/neu_t1.png" type="Texture" id=3]
+
+[node name="Tower1" instance=ExtResource( 1 )]
+detect_radius = 500
+fire_rate = 0.5
+Bullet = ExtResource( 2 )
+Identity = "Tower1"
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.415052, -17.8477 )
+scale = Vector2( 0.0383266, 0.043252 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="Range" index="0"]
+position = Vector2( 0.707115, 0 )
+[connection signal="button_down" from="Sell" to="." method="_on_Sell_button_down" binds= [ "Tower1" ]]
+[connection signal="button_down" from="Upgrade" to="." method="_on_Upgrade_button_down" binds= [ "Tower1" ]]

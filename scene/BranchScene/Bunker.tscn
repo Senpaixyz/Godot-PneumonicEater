@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/bgtry.png" type="Texture" id=1]
+[ext_resource path="res://HUD/sidepanel.tscn" type="PackedScene" id=2]
+
+[node name="Bunker" type="TextureButton"]
+margin_left = 565.713
+margin_top = -300.174
+margin_right = 647.713
+margin_bottom = -223.174
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 1 )
+expand = true
+
+[node name="MenuPress" parent="." instance=ExtResource( 2 )]
+
+[node name="PlayerStart" type="Position2D" parent="."]
+position = Vector2( 39.4008, 23.7368 )
