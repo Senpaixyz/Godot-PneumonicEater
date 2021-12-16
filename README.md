@@ -29,12 +29,12 @@ Download [Godo Game Engine](https://godotengine.org/) to this their own website 
 | ------ | ------ |
 | Pneumonic Eater.apk | [https://www.mediafire.com/file/km1ijks6egfdyte/PneumonicEater.apk/file] |
 ## Sprites
-#### Healthy Cell 
--Healthy cells stands as the main character of the game where all the white bloods cells soldiers should protect from the viruses.
-![N|Solid](https://github.com/Senpaixyz/Godot-PneumonicEater/blob/master/assets/cells/healthcells/healthy_01.png?raw=true)
-#### Infected Cell 
--From the infected cells all the viruses spawned. The white bloods cells army should destroy this infected cells just to stop the viruses spawning.
-![N|Solid](https://github.com/Senpaixyz/Godot-PneumonicEater/blob/master/assets/cells/infectedcells/infected_01.png?raw=true)
+
+Sprite            |  Name          | Description             |
+:-------------------------:|:-------------------------:|:-------------------------:|
+![](https://github.com/Senpaixyz/Godot-PneumonicEater/blob/master/assets/cells/healthcells/healthy_01.png?raw=true) | Healthy Cell | Healthy cells stands as the main character of the game where all the white bloods cells soldiers should protect from the viruses.
+![](https://github.com/Senpaixyz/Godot-PneumonicEater/blob/master/assets/cells/infectedcells/infected_01.png?raw=true) | Infected Cell | From the infected cells all the viruses spawned. The white bloods cells army should destroy this infected cells just to stop the viruses spawning.
+
 #### White Bloods Cells Army
 -The white bloods cells army is the one who fight and destroy all the infected cells and the viruses. The sprites was base on different type of white bloods cells in our body. They stand as the army in our body that fight againts viruses.
 
